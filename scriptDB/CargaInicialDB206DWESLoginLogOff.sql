@@ -1,5 +1,5 @@
   -- Me posiciono en la base de datos
-USE DB206DWESLoginLogOff;
+USE DB206DWESLoginLogOffTema5;
 
 -- Inserto los datos iniciales en la tabla Departamento
 INSERT INTO T02_Departamento (T02_CodDepartamento, T02_DescDepartamento, T02_FechaCreacionDepartamento, T02_VolumenDeNegocio, T02_FechaBajaDepartamento) VALUES

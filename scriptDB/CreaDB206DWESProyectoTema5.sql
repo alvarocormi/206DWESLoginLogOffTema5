@@ -5,10 +5,10 @@
 */
 
 /*Creacion de la base de datos*/
-create database if not exists DB206DWESLoginLogOff;
+create database if not exists DB206DWESLoginLogOffTema5;
 
 /*Se pone en uso la base de datos*/
-use DB206DWESLoginLogOff;
+use DB206DWESLoginLogOffTema5;
 
 /*Creacion de la tabla Usuario*/
 create table if not exists T01_Usuario(
@@ -30,6 +30,6 @@ T02_VolumenDeNegocio float,
 T02_FechaBajaDepartamento datetime default null)engine=innodb;
 
 /*Creacion del usuario*/
-create user 'user206DWESLoginLogOff'@'%' identified by 'P@ssw0rd';
-grant all privileges on DB206DWESLoginLogOff.* to 'user206DWESLoginLogOff'@'%';
+create user 'user206DWESLoginLogOffTema5'@'%' identified by 'P@ssw0rd';
+grant all privileges on DB206DWESLoginLogOffTema5.* to 'user206DWESLoginLogOffTema5'@'%';
 
