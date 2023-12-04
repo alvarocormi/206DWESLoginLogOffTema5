@@ -1,5 +1,6 @@
 <?php
-session_start(); // Iniciar la sesión
+// Iniciar la sesión
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,34 +8,17 @@ session_start(); // Iniciar la sesión
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <!--Boostrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.3/darkly/bootstrap.min.css" integrity="sha512-ZdxIsDOtKj2Xmr/av3D/uo1g15yxNFjkhrcfLooZV5fW0TT7aF7Z3wY1LOA16h0VgFLwteg14lWqlYUQK3to/w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Iconos-->
     <link rel="shortcut icon" href="../webroot/img/palma.png" type="image/x-icon" />
     <!--CSS-->
-    <link rel="stylesheet" href="../webroot/css/main.css" />
-    <link rel="stylesheet" href="../webroot/css/loginLogOff.css" />
+    <link rel="stylesheet" href="../webroot/css/styleForm.css" />
 
     <title>Login- Alvaro Cordero Miñambres</title>
 </head>
 
 <body>
-    <header>
-        <div class="daw">
-            <span>DWES.</span>
-        </div>
-    </header>
-    <main>
-        <div class="contenido">
-            <h2>Login</h2>
-            <p>IES LOS SAUCES - BENAVENTE</p>
-
-        </div>
+    <div class="center">
+        <h1>Login</h1>
         <?php
         /**
          * Inlucimos la libreria de validacion de formularios
@@ -202,48 +186,51 @@ session_start(); // Iniciar la sesión
             if (isset($_REQUEST['enviar']) && !$oUsuarioActivo) {
                 // Mostramos un mensaje de error y el formulario nuevamente
         ?>
-                <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-check-inline" style="width: 100%; position: fixed; top: 250px; left: 42%">
-                    <div>
-                        <label for="usuario" style="color: black;">Usuario: </label>
+
+                <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    <div class="txt_field">
                         <input type="text" id="usuario" name="usuario" value="<?php echo (isset($_REQUEST['usuario']) ? $_REQUEST['usuario'] : ''); ?>">
-                        <?php echo ($aErrores['usuario'] != null ? "<span style='color:red; padding: 0; margin: 0;'>" . $aErrores['usuario'] . "</span>" : ''); ?>
-                        <br><br>
+                        <span class="raya"></span>
+                        <label>Usuario: </label>
 
-                        <label for="contrasena" style="margin-top: 5px; color: black;">Password: </label>
-                        <input type="contrasena" id="contrasena" name="contrasena" value="<?php echo (isset($_REQUEST['contrasena']) ? $_REQUEST['contrasena'] : ''); ?>">
-                        <?php echo ($aErrores['contrasena'] != null ? "<span style='color:red'>" . $aErrores['contrasena'] . "</span>" : null); ?>
-                        <br><br>
-
-                        <p class='error' style="color: red; ">Usuario o contrasena incorrectos. Inténtalo de nuevo.</p>
-                        <input type="submit" value="Iniciar Sesion" name="enviar">
                     </div>
+                    <div class=" txt_field">
+                        <input type="password" id="contrasena" name="contrasena" value="<?php echo (isset($_REQUEST['contrasena']) ? $_REQUEST['contrasena'] : ''); ?>">
+                        <span class="raya"></span>
+                        <label>Password: </label>
+
+                    </div>
+
+                    <p class='error' style="color: red; font-size: 15px; margin-bottom: 15px; ">Usuario o contrasena incorrectos. Inténtalo de nuevo.</p>
+                    <input type="submit" value="Iniciar Sesion" name="enviar">
                 </form>
             <?php
             } else {
                 // Formulario que se le muestra al cliente para que lo rellene
             ?>
-                <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-check-inline" style="width: 100%; position: fixed; top: 250px; left: 42%">
-                    <div>
-                        <label for="usuario" style="color: black;">Usuario: </label>
+                <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    <div class="txt_field">
                         <input type="text" id="usuario" name="usuario" value="<?php echo (isset($_REQUEST['usuario']) ? $_REQUEST['usuario'] : ''); ?>">
-                        <?php echo ($aErrores['usuario'] != null ? "<span style='color:red; padding: 0; margin: 0;'>" . $aErrores['usuario'] . "</span>" : ''); ?>
-                        <br><br>
+                        <span class="raya"></span>
+                        <label>Usuario: </label>
 
-                        <label for="contrasena" style="margin-top: 5px; color: black;">Password: </label>
-                        <input type="password" id="contrasena" name="contrasena" value="<?php echo (isset($_REQUEST['contrasena']) ? $_REQUEST['contrasena'] : ''); ?>">
-                        <?php echo ($aErrores['contrasena'] != null ? "<span style='color:red'>" . $aErrores['contrasena'] . "</span>" : null); ?>
-                        <br><br>
-
-
-                        <input type="submit" value="Iniciar Sesion" name="enviar">
                     </div>
+                    <div class=" txt_field">
+                        <input type="password" id="contrasena" name="contrasena" value="<?php echo (isset($_REQUEST['contrasena']) ? $_REQUEST['contrasena'] : ''); ?>">
+                        <span class="raya"></span>
+                        <label>Password: </label>
+
+
+                    </div>
+
+                    <input type="submit" value="Iniciar Sesion" name="enviar">
                 </form>
-        <?php
+    </div>
+<?php
             }
         }
-        //Importamos el footer
-        require_once("../codigoPHP/footer.php");
-        ?>
+
+?>
 
 </body>
 
