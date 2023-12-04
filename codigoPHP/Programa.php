@@ -37,12 +37,39 @@ $numConexiones = $_SESSION['numConexiones'];
 $ultimaConexion = $_SESSION['ultimaConexion'];
 
 /**
- * 
+ * Comprobamos que le ha dado al boton de cerrar sesion
+ * Mediante isset() -> Determina si una variable está definida y no es null .
  */
 if (isset($_POST['cerrar_sesion'])) {
-    session_unset(); // Desvincula todas las variables de sesión
-    session_destroy(); // Destruye la sesión
-    echo '<meta http-equiv="refresh" content="0;url=Login.php">'; // Redirige a la página de inicio de sesión
+
+    /**
+     * @link https://www.php.net/manual/function.session-unset.php
+     * 
+     * Liberamos todas las variables de sesion
+     * Mediante session_unset() -> podremos liberar todas las variables de sesion actualmente registrtadas
+     */
+    session_unset(); 
+
+    /**
+     * @link https://www.php.net/manual/function.session-destroy.php
+     * 
+     * Destruimos la sesion
+     * Mediante session_destroy() -> podremos destruir toda la informacion asociada con la sesion actual
+     */
+    session_destroy();
+    
+    /**
+     * Redirigimos al usuario al Login
+     * Mediante la etiqueta html <meta> y el atributo url
+     */
+    echo '<meta http-equiv="refresh" content="0;url=Login.php">';
+
+    /**
+     * @link https://www.php.net/manual/function.exit.php
+     * 
+     * Finzalizamos la ejecucion del script
+     * Mediante exit() -> podremos finalizar la ejecucion del script
+     */
     exit();
 }
 
