@@ -1,5 +1,5 @@
 Options -Indexes
-DirectoryIndex index.php index.html
-ErrorDocument 404 /errors/index.html
-ErrorDocument 403 /errors/index.html
-
+DirectoryIndex indexProyectoTema5.html
+ErrorDocument 403 /error/403.html
+ErrorDocument 404 /error/404.html
+Redirect 301 /google https://www.google.es

@@ -6,11 +6,11 @@
  * Script borrado de tablas usuario y departamento
  */
 //Incluyo las variables de la conexion
-require_once '../conf/confDB.php';
+require_once '../conf/confDBPDO.php';
 
 try {
     //Hago la conexion con la base de datos
-    $miDB = new PDO(DSN, USER, PASSWORD);
+    $miDB = new PDO(DSN, USERNAME, PASSWORD);
 
     // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
     $miDB ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
