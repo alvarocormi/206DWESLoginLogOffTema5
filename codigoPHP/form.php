@@ -29,7 +29,7 @@
 
 			</div>
 
-			<p style="color: red;"><?php echo (!empty($aErrores["usuario"]) ? $aErrores["usuario"] : ''); ?>.</p>
+			<p style="color: red;"><?php echo (!empty($aErrores["usuario"]) ? $aErrores["usuario"] : ''); ?></p>
 			<input type="submit" value="Iniciar Sesion" name="enviar">
 		</form>
 	</div>
