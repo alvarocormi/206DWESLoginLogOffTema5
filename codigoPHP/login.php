@@ -21,6 +21,8 @@ session_start();
         <h1>Login</h1>
         <?php
         /**
+         * @author Ismael, Alvaro
+         * 
          * Inlucimos la libreria de validacion de formularios
          * Incluimos la configuracion de la base de datos
          */
