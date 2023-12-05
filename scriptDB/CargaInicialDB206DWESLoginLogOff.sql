@@ -16,15 +16,15 @@ INSERT INTO T01_Usuario (
     T01_DescUsuario,
     T01_Perfil
 ) VALUES 
-    ('admin', SHA2('adminpaso', 256), 'Descripción del Usuario 0', 'administrador'),
-    ('alvaro', SHA2('alvaropaso', 256), 'Descripción del Usuario 1', 'usuario'),
-    ('carlos', SHA2('carlospaso', 256), 'Descripción del Usuario 2', 'usuario'),
-    ('oscar', SHA2('oscarpaso', 256), 'Descripción del Usuario 3', 'usuario'),
-    ('borja', SHA2('borjapaso', 256), 'Descripción del Usuario 4', 'usuario'),
-    ('rebeca', SHA2('rebecapaso', 256), 'Descripción del Usuario 5', 'usuario'),
-    ('erika', SHA2('erikapaso', 256), 'Descripción del Usuario 6', 'usuario'),
-    ('ismael', SHA2('ismaelpaso', 256), 'Descripción del Usuario 7', 'usuario'),
-    ('heraclio', SHA2('heracliopaso', 256), 'Descripción del Usuario 7', 'administrador'),
-    ('amor', SHA2('amorpaso', 256), 'Descripción del Usuario 8', 'administrador'),
-    ('antonio', SHA2('antoniopaso', 256), 'Descripción del Usuario 9', 'administrador'),
-    ('alberto', SHA2('antoniopaso', 256), 'Descripción del Usuario 10', 'administrador');
+    ('admin', SHA2('adminpaso', 256), 'administrador', 'administrador'),
+    ('alvaro', SHA2('alvaropaso', 256), 'Alvaro Cordero Miñambres', 'usuario'),
+    ('carlos', SHA2('carlospaso', 256), 'Carlos Garcia Cachon', 'usuario'),
+    ('oscar', SHA2('oscarpaso', 256), 'Oscar Pascual Ferrero', 'usuario'),
+    ('borja', SHA2('borjapaso', 256), 'Borja Nuñez Refoyo', 'usuario'),
+    ('rebeca', SHA2('rebecapaso', 256), 'Rebeca Sanchez Perez', 'usuario'),
+    ('erika', SHA2('erikapaso', 256), 'Erika', 'usuario'),
+    ('ismael', SHA2('ismaelpaso', 256), 'Ismael Ferreras Garcia', 'usuario'),
+    ('heraclio', SHA2('heracliopaso', 256), 'Heraclio Borbujo Moran', 'administrador'),
+    ('amor', SHA2('amorpaso', 256), 'Amor Rodriguez Navarro', 'administrador'),
+    ('antonio', SHA2('antoniopaso', 256), 'Antonio Jañez Velada', 'administrador'),
+    ('alberto', SHA2('antoniopaso', 256), 'Alberto Bahillo Fernandez', 'administrador');
