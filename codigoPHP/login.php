@@ -160,7 +160,7 @@ session_start();
              * Configuramos las sesiones para almacenar los datos del usuario
              * Lo realizamos mediante la variable $_SESSION
              */
-            $_SESSION['usuario'] = $oUsuarioActivo->T01_DescUsuario;
+            $_SESSION['usuario'] = $oUsuarioActivo->T01_CodUsuario;
             $_SESSION['numConexiones'] = $numConexiones;
             $_SESSION['ultimaConexion'] = $fechaHoraUltimaConexion;
 
