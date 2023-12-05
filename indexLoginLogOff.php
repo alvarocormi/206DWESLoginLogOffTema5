@@ -31,7 +31,7 @@
 			<h2>Login Logoff</h2>
 			<p>IES LOS SAUCES - BENAVENTE</p>
 			<button type="button" class="btn btn-secondary btn-lg" style="background-color: #6b7280;">
-				<a href="./codigoPHP/login.php" class="text-white text-decoration-none">LOGIN</a>
+				<a href="./codigoPHP/Login.php" class="text-white text-decoration-none">LOGIN</a>
 			</button>
 		</div>
 

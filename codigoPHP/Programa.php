@@ -83,5 +83,4 @@ echo '<form method="post" action="">';
 echo '<input type="submit" name="cerrar_sesion" value="Cerrar Sesión">';
 echo '</form>';
 
-echo '<a href="Detalle.php">Detalle</a>';
 ?>
