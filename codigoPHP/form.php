@@ -22,14 +22,14 @@
 				<label>Usuario: </label>
 
 			</div>
-			<div class=" txt_field">
+			<div class="txt_field">
 				<input type="password" id="contrasena" name="contrasena" value="<?php echo (isset($_REQUEST['contrasena']) ? $_REQUEST['contrasena'] : ''); ?>">
 				<span class="raya"></span>
 				<label>Password: </label>
 
 			</div>
 
-			<p style="color: red;"><?php echo (!empty($aErrores["usuario"]) ? $aErrores["usuario"] : ''); ?></p>
+			<p style="color: red; position: absolute; bottom: 80px; left: 28%"><?php echo (!empty($aErrores["usuario"]) ? $aErrores["usuario"] : ''); ?></p>
 			<input type="submit" value="Iniciar Sesion" name="enviar">
 		</form>
 	</div>

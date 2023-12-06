@@ -199,13 +199,16 @@ if ($entradaOK) {
 
        //Pase lo que pase 
     } finally {
+
         // Se cierra la conexion con la base de datos
         unset($miDB);
     }
-
 
     //Si el fromulario a sido enviado pero el usuario o contraseña no ha sido valdiado 
 } else {
     // Mostramos un mensaje de error y el formulario nuevamente
     require_once("../codigoPHP/form.php");
+
+    //Importamos el footer
+    require_once("../codigoPHP/footer.php");
 }

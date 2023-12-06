@@ -1,5 +1,4 @@
 Options -Indexes
-DirectoryIndex indexProyectoTema5.html
+DirectoryIndex indexLoginLogOff.php
 ErrorDocument 403 /error/403.html
 ErrorDocument 404 /error/404.html
-Redirect 301 /google https://www.google.es
