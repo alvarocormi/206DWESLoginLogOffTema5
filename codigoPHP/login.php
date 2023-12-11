@@ -176,7 +176,7 @@ if ($entradaOK) {
          * Redirigimos al usuario a la pagina Progam.php
          * Para echo usamos la etiqueta <meta/> y le pasamos como parametro la url del fichero
          */
-        echo '<meta http-equiv="refresh" content="0;url=Programa.php">';
+        header('Location: Progama.php');
 
         /**
          * @link https://www.php.net/manual/function.exit.php
