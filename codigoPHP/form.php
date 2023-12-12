@@ -30,7 +30,10 @@
 			</div>
 
 			<p style="color: red; position: absolute; bottom: 80px; left: 28%"><?php echo (!empty($aErrores["usuario"]) ? $aErrores["usuario"] : ''); ?></p>
-			<input type="submit" value="Iniciar Sesion" name="enviar">
+			<div class="botons" style="display: flex;">
+				<input style="width: 50%; margin-right: 10px;" type="submit" value="Iniciar Sesion" name="enviar">
+				<input style="width: 50%; margin-left: 10px; background-color: #bf1515;" type="submit" value="Cancelar" name="cancelar">
+			</div>
 		</form>
 	</div>
 </body>

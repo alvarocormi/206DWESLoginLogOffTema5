@@ -17,6 +17,11 @@
  */
 session_start();
 
+if(!empty($_REQUEST['cancelar'])) {
+    header('Location: https://daw206.ieslossauces.es/206DWESLoginLogOffTema5/indexLoginLogOff.php');
+    exit();
+}
+
 /**
  * Inlucimos la libreria de validacion de formularios
  * Incluimos la configuracion de la base de datos
@@ -152,6 +157,14 @@ if ($entradaOK) {
         $fechaHoraUltimaConexionAnterior = $oUsuarioActivo->T01_FechaHoraUltimaConexion;
 
         /**
+         * Configuramos las sesiones para almacenar los datos del usuario
+         * Lo realizamos mediante la variable $_SESSION
+         */
+        $_SESSION['usuario'] = $oUsuarioActivo->T01_CodUsuario;
+        $_SESSION['numConexiones'] = $numConexionActual;
+        $_SESSION['ultimaConexion'] = $fechaHoraUltimaConexionAnterior;
+
+        /**
          * Realizamos la consulta de aztualizacion
          * Mediante esta consulta vamos a actualizar el numero de conexiones de la base de datos del usuario
          * Lo realizamos mediante Current_TimeStamp para que nos coga la fecha y la hora actual
@@ -164,13 +177,6 @@ if ($entradaOK) {
         //Se ejecuta la consulta de actualizacion
         $consultaActualizacion->execute();
 
-        /**
-         * Configuramos las sesiones para almacenar los datos del usuario
-         * Lo realizamos mediante la variable $_SESSION
-         */
-        $_SESSION['usuario'] = $oUsuarioActivo->T01_CodUsuario;
-        $_SESSION['numConexiones'] = $numConexionActual;
-        $_SESSION['ultimaConexion'] = $fechaHoraUltimaConexionAnterior;
 
         /**
          * Redirigimos al usuario a la pagina Progam.php

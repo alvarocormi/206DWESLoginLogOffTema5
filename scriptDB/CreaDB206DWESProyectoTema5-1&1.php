@@ -24,8 +24,8 @@ try {
             T01_CodUsuario varchar(8) primary key,
             T01_Password varchar(255),
             T01_DescUsuario varchar (255),
-            T01_NumConexiones int default 1,
-            T01_FechaHoraUltimaConexion datetime default CURRENT_TIMESTAMP,
+            T01_NumConexiones INT,
+            T01_FechaHoraUltimaConexion datetime default 0,
             T01_Perfil enum('usuario','administrador') default 'usuario',
             T01_ImagenUsuario blob)engine=innodb; 
           
