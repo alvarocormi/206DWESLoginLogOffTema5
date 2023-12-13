@@ -18,7 +18,7 @@
 session_start();
 
 if(!empty($_REQUEST['cancelar'])) {
-    header('Location: https://daw206.ieslossauces.es/206DWESLoginLogOffTema5/indexLoginLogOff.php');
+    header('Location: ../indexLoginLogOff.php');
     exit();
 }
 
@@ -179,10 +179,9 @@ if ($entradaOK) {
 
 
         /**
-         * Redirigimos al usuario a la pagina Progam.php
-         * Para echo usamos la etiqueta <meta/> y le pasamos como parametro la url del fichero
+         * Redirigimos al usuario a la pagina Progama.php
          */
-        header('Location: Progama.php');
+        header("Location: Programa.php");
 
         /**
          * @link https://www.php.net/manual/function.exit.php

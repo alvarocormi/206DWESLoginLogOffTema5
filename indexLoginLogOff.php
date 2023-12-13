@@ -1,3 +1,6 @@
+<?php
+	setcookie('idioma', $_REQUEST['idioma']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +36,14 @@
 			<button type="button" class="btn btn-secondary btn-lg" style="background-color: #6b7280;">
 				<a href="./codigoPHP/Login.php" class="text-white text-decoration-none">LOGIN</a>
 			</button>
+			<br>
+			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='POST'>
+				<label for="idioma" style='color: black'>Eliga idioma: </label>
+				<select name="idioma" class="idioma">
+					<option value="español">Español</option>
+					<option value="britanico">Inglés</option>
+				</select>
+			</form>
 		</div>
 
 	</main>
