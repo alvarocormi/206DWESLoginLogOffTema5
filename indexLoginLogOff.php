@@ -1,5 +1,41 @@
 <?php
-	setcookie('idioma', $_REQUEST['idioma']);
+
+/**
+ * @author Alvaro Cordero Miñambres, Ismael Ferreras García
+ * @version 1.0
+ * @since 21/11/2023
+ */
+
+ //Si se ha enviado algo mediante el metodo POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+	// Redirige a la página del programa
+	header("Location: codigoPHP/Login.php");
+
+	//Finaliza la ejecuion del script
+	exit();
+}
+
+//Si el idioma enviado por metodo GET esta vacio o es null
+if (isset($_GET['idioma'])) {
+
+	//Cogemos el idioma y lo guardamos en una variable
+	$idioma = $_GET['idioma'];
+
+	/**
+	 * @link https://www.php.net/manual/function.setcookie.php
+	 * 
+	 * Creamos una cookie y le pasamos el idioma y el tiempo que queremos que dure la cookie
+	 * setcookie -> define una cookie para ser enviada junto con el resto de cabeceras HTTP
+	 */
+	setcookie("idioma", $idioma, time() + (30 * 24 * 60 * 60), "/");
+
+	//Te redidirge a la pagina en la que estas actualmente
+	header('Location: ' . $_SERVER['PHP_SELF']);
+
+	//Finalizamos la ejecucion del script
+	exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,13 +73,14 @@
 				<a href="./codigoPHP/Login.php" class="text-white text-decoration-none">LOGIN</a>
 			</button>
 			<br>
-			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='POST'>
-				<label for="idioma" style='color: black'>Eliga idioma: </label>
-				<select name="idioma" class="idioma">
-					<option value="español">Español</option>
-					<option value="britanico">Inglés</option>
-				</select>
-			</form>
+			<div>
+				<a class="boton" href="?idioma=es">
+					<img src="./webroot/img/spain.jpg" alt="es" width="40" height="30">
+				</a>
+				<a class="boton" href="?idioma=en">
+					<img src="./webroot/img/english.png" alt="en" width="40" height="30">
+				</a>
+			</div>
 		</div>
 
 	</main>

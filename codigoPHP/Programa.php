@@ -76,6 +76,40 @@ if (isset($_POST['cerrar_sesion'])) {
      */
     exit();
 }
+
+$idioma = isset($_COOKIE['idioma']) ? $_COOKIE['idioma'] : 'es';
+
+// Define los mensajes según el idioma
+//Si el idioma es espñaol
+if ($idioma == 'es') {
+    
+    //Guaradamos en una variable el mensaje de bienvenida
+    $bienvenida = "Bienvenido, {$usuario}";
+
+    //Guardamos en una variable el numero de conexiones
+    $numConexiones = "Esta es tu <strong>{$numConexiones}</strong> vez conectándote";
+
+    //Si el numero de exiones es 1
+    if ($_SESSION['numConexiones'] == 1) {
+
+        //Guardamos un mensaje indicandole que es la primera vez que se conecta el usuario
+        $ultimaConexion = "Esta es la primera vez que te conectas";
+    } else {
+
+        //Si se ha conectado mas veces le mostramos otro mensaje
+        $ultimaConexion = "Te conectaste por última vez <strong>{$ultimaConexion}.</strong>";
+    }
+
+    //Si el idioma es ingles repetimos el mismo proceso
+} elseif ($idioma == 'en') {
+    $bienvenida = "Welcome, {$usuario}";
+    $numConexiones = "This is your <strong>{$numConexiones}</strong> time logging in";
+    if ($_SESSION['numConexiones'] == 1) {
+        $ultimaConexion = "This is the first time you connect";
+    } else {
+        $ultimaConexion = "You last logged in on <strong>{$ultimaConexion}.</strong>";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,9 +138,9 @@ if (isset($_POST['cerrar_sesion'])) {
 
             <div class="card text-center" style="width: 370px; height: 320px; background-color: white;">
                 <div class="card-body" style="color: black; padding: 15px;">
-                    <h5 class="card-title" style="font-size: 1.7rem; font-weight: bold;">Bienvenido <?php echo ("$usuario") ?></h5>
+                    <h5 class="card-title" style="font-size: 1.7rem; font-weight: bold;"><?php echo ("$bienvenida") ?></h5>
                     <hr>
-                    <p class="card-text" style="font-size: 18px;">Esta es tu <?php echo ("<strong>$numConexiones</strong>") ?> vez conectándote y te conectaste por última vez el <?php echo ("<br><strong>$ultimaConexion</strong>") ?></p>
+                    <p class="card-text" style="font-size: 18px;"><?php echo ("$numConexiones") ?><?php echo ("<br>$ultimaConexion") ?></p>
                     <a href=" ./Detalle.php" class="btn btn-primary" style="position: absolute; bottom: 10px; right: 10px; width: 150px; height: 50px; line-height: 35px; background: #2691d9; font-weight: bold;">Detalle</a>
                     <?php
                     echo '<form method="post" action="">';
