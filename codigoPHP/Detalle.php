@@ -24,6 +24,13 @@ if (empty($_SESSION['usuario']) || empty($_SESSION['numConexiones']) || empty($_
     exit();
 }
 
+if (isset($_REQUEST['atras'])) {
+    // Se redirige al usuario al login
+    header('Location: Programa.php'); // Llevo al usuario a la pagina 'programa.php'
+    // Termina el programa
+    exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +48,9 @@ if (empty($_SESSION['usuario']) || empty($_SESSION['numConexiones']) || empty($_
 
 <body>
     <div>
+        <form name="Programa" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <button class="btn btn-secondary" aria-disabled="true" type="submit" name="atras">Volver</button>
+        </form>
         <?php
         /**
          * @author Ismael Ferreras García, Alvaro Cordero Miñambres
