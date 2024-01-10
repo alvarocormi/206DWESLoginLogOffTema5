@@ -64,9 +64,9 @@ if (isset($_POST['cerrar_sesion'])) {
 
     /**
      * Redirigimos al usuario al Login
-     * Mediante la etiqueta html <meta> y el atributo url
+     * Mediante la funcion header pasandole el parametro Location
      */
-    header("Location: Login.php");
+    header("Location: ../indexLoginLogOff.php");
 
     /**
      * @link https://www.php.net/manual/function.exit.php

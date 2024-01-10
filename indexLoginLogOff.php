@@ -6,7 +6,14 @@
  * @since 21/11/2023
  */
 
- //Si se ha enviado algo mediante el metodo POST
+//Comprobamos si la cooki es nula o esta vacia
+if (!isset($_COOKIE['idioma'])) {
+
+	// En caso negativo la creamos y ponemos el valor por defecto
+	setcookie("idioma", "es", time() + (30 * 24 * 60 * 60), "/");
+}
+
+//Si se ha enviado algo mediante el metodo POST 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	// Redirige a la página del programa
@@ -17,18 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 //Si el idioma enviado por metodo GET esta vacio o es null
-if (isset($_GET['idioma'])) {
-
-	//Cogemos el idioma y lo guardamos en una variable
-	$idioma = $_GET['idioma'];
-
+if (isset($_REQUEST['idioma'])) {
 	/**
 	 * @link https://www.php.net/manual/function.setcookie.php
 	 * 
 	 * Creamos una cookie y le pasamos el idioma y el tiempo que queremos que dure la cookie
 	 * setcookie -> define una cookie para ser enviada junto con el resto de cabeceras HTTP
 	 */
-	setcookie("idioma", $idioma, time() + (30 * 24 * 60 * 60), "/");
+	setcookie("idioma", $_REQUEST['idioma'], time() + (30 * 24 * 60 * 60), "/");
 
 	//Te redidirge a la pagina en la que estas actualmente
 	header('Location: ' . $_SERVER['PHP_SELF']);
