@@ -84,6 +84,7 @@ if (isset($_REQUEST['idioma'])) {
 					<img src="./webroot/img/english.png" alt="en" width="40" height="30">
 				</a>
 			</div>
+			<img src="./webroot/img/fondo.png" alt="" width="650px" style="margin-top: 30px;">
 		</div>
 
 	</main>
