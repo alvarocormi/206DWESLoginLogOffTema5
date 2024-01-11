@@ -13,14 +13,13 @@ if (!isset($_COOKIE['idioma'])) {
 	setcookie("idioma", "es", time() + (30 * 24 * 60 * 60), "/");
 }
 
-//Si se ha enviado algo mediante el metodo POST 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//Comprobamos si pulsa el boton login
+if (isset($_REQUEST['login'])) {
+    // Redirige a la página de login
+    header("Location: codigoPHP/Login.php");
 
-	// Redirige a la página del programa
-	header("Location: codigoPHP/Login.php");
-
-	//Finaliza la ejecuion del script
-	exit();
+	//Finalizamos la ejecucion del script
+    exit();
 }
 
 //Si el idioma enviado por metodo GET esta vacio o es null
